@@ -1,3 +1,17 @@
+.container{
+  background-color: grey;
+}
+
+#mainContainer{
+  background-color: pink;
+}
+#mainInfo{
+  background-color: blue;
+}
+
+#favoritInfo{
+  background-color: yellow;
+}
 .description {
     color: #2c1886;
     font-weight: bold;

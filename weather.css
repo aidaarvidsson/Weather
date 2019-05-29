@@ -1,0 +1,14 @@
+.description {
+    color: #2c1886;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .temp {
+    font-size: 18px;
+  }
+  
+  .highlow {
+    font-size: 14px;
+    color: #666;
+  }

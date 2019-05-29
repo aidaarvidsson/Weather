@@ -9,62 +9,63 @@
 
     </head>
     <body>
-            <div class="container">
         <div id="app">
+            <div class="container">
+        
        
-<header>
-<h1> Väder</h1>
+                <header>
+                    <h1> Väder</h1>
 
-</header>
+                </header>
 
-<main>
-    <div class="container" id="mainContainer">
-        <div class = "row">
-            <div class ="col-12 col-md-12 col-lg-6">
-                    <form @submit.prevent="getWeather">
-                            <input type="text" placeholder="City" v-model="city" class="form-control">
-                          </form>
-            </div>
+                <main>
+                    <div class="container" id="mainContainer">
+                        <div class = "row">
+                            <div class ="col-12 col-md-12 col-lg-6">
+                                <form @submit.prevent="getWeather">
+                                    <input type="text" placeholder="City" v-model="city" class="form-control">
+                                </form>
+                            </div>
 
-            <div class ="col-12 col-md-12 col-lg-6">
-                    <button id="position" class="btn btn-success">Get my position</button>
+                            <div class ="col-12 col-md-12 col-lg-6">
+                                <button id="position" class="btn btn-success" v-on:click="getGeolocation" >From My Location</button>
                    
-                    <button id="favorites" class="btn btn-success">Favorites</button>
+                                <button id="favorites" class="btn btn-success" v-on:click="addCityToFav">Add to Favorites</button>
                     
 
-                </div>
-        </div>
+                            </div>
+                        </div>
         
 
-        <div class = "row">
-                <div class ="col-12 col-md-6 col-lg-6" id ="mainInfo">
-          <div v-if="submitted">
-            <h2> Weather in {{ weather.name }} </h2>
-            <div class="description">{{ weather.description }}</div>
-            <div class="temp">It's currently {{ weather.temp }} °C.</div>
-            <div class="highlow">High: {{ weather.high }} °C. Low: {{ weather.low }} °C.</div>
-            <div class="temp">The pressure is {{ weather.pressure }} hPa.</div>
-            <div class="temp">The humidity is {{ weather.humidity }} %.</div>
+                        <div class = "row">
+                            <div class ="col-12 col-md-6 col-lg-6" id ="mainInfo">
+                                <div v-if="submitted">
+                                    <h2> Weather in {{ weather.name }} </h2>
+                                    <div class="description">{{ weather.description }}</div>
+                                    <div class="temp">It's currently {{ weather.temp }} °C.</div>
+                                    <div class="highlow">High: {{ weather.high }} °C. Low: {{ weather.low }} °C.</div>
+                                    <div class="temp">The pressure is {{ weather.pressure }} hPa.</div>
+                                    <div class="temp">The humidity is {{ weather.humidity }} %.</div>
+                                </div>
+                                <div v-else>
+                                    <weather-table v-bind:wItems="wItems"></weather-table>
+                                </div>
+                            </div>
+                            <div class ="col-12 col-md-6 col-lg-6" id ="favoritInfo">
+                                <city-list v-bind:cities="cities" v-bind:deleteitem="deleteItem" v-bind:searchname="searchName"></city-list>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer> Copyright Aida Arvidsson, Gino Herrera, Lina Hassani </footer>
+
+            </div>
         </div>
-    </div>
-    <div class ="col-12 col-md-6 col-lg-6" id ="favoritInfo">
-        <ul>
-           <li>Hej</li>
-        </ul>
-    </div>
-
-
-</div>
-</div>
-    </main>
-
-    <footer> Copyright Aida Arvidsson, Gino Herrera, Lina Hassani </footer>
-
-    </div>
-        
        
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="geo-data-table.js"></script>
         <script src="weather.js"></script>
-        </div>
+    
     </body>
 </html>

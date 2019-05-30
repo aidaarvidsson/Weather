@@ -47,7 +47,7 @@ Vue.component('city-item', {
     }
   },
   template: `
-  <li class="list-group-item" v-on:click="searchname(item.name)">
+  <li class="list-group-item" v-on:click="searchname(item.name)" id=li>
     {{item.name}}
     <button class="float-right" v-on:click="deleteitem(item.id)">X</button>
   </li>

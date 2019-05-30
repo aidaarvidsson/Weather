@@ -8,7 +8,7 @@
          <link href="weather.css" rel="stylesheet">
 
     </head>
-    <body>
+    <body> 
         <div id="app">
             <div class="container">
         
@@ -22,15 +22,16 @@
                     <div class="container" id="mainContainer">
                         <div class = "row">
                             <div class ="col-12 col-md-12 col-lg-6">
-                                <form @submit.prevent="getWeather">
+                                <form @submit.prevent="getWeather" id="form">
                                     <input type="text" placeholder="City" v-model="city" class="form-control">
                                 </form>
                             </div>
 
                             <div class ="col-12 col-md-12 col-lg-6">
-                                <button id="position" class="btn btn-success" v-on:click="getGeolocation" >From My Location</button>
+                                <button id="position" class="btn btn-primary" v-on:click="getGeolocation" >From My Location</button>
                    
-                                <button id="favorites" class="btn btn-success" v-on:click="addCityToFav">Add to Favorites</button>
+                                <button id="favorites" class="btn btn-primary" v-on:click="addCityToFav">Add to Favorites</button>
+                                
                     
 
                             </div>
@@ -40,12 +41,12 @@
                         <div class = "row">
                             <div class ="col-12 col-md-6 col-lg-6" id ="mainInfo">
                                 <div v-if="submitted">
-                                    <h2> Weather in {{ weather.name }} </h2>
+                                    <h2 id ="h2stad"> Weather in {{ weather.name }} </h2>
                                     <div class="description">{{ weather.description }}</div>
                                     <div class="temp">It's currently {{ weather.temp }} °C.</div>
                                     <div class="highlow">High: {{ weather.high }} °C. Low: {{ weather.low }} °C.</div>
-                                    <div class="temp">The pressure is {{ weather.pressure }} hPa.</div>
-                                    <div class="temp">The humidity is {{ weather.humidity }} %.</div>
+                                    <div class="temp" id ="h">The pressure is {{ weather.pressure }} hPa.</div>
+                                    <div class="temp" id="p">The humidity is {{ weather.humidity }} %.</div>
                                 </div>
                                 <div v-else>
                                     <weather-table v-bind:wItems="wItems"></weather-table>

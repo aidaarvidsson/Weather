@@ -1,22 +1,43 @@
-.container{
-  background-color: grey;
+body{
+  background-image: url("background4.jpeg");
 }
 
-#mainContainer{
-  background-color: pink;
+h1{
+  text-align: center;
+  color: #1D71F2
 }
+
+
 #mainInfo{
-  background-color: blue;
+
+   color: #666;
+  
 }
 
-#favoritInfo{
-  background-color: yellow;
+.mainContainer{
+  margin:10px;
 }
+#h2stad{
+  color: #1D71F2;
+}
+
+input[type="text"], textarea {
+
+  background-color : #E3F4FE; 
+
+}
+
+#li {
+  background-color : #E3F4FE; 
+}
+
+
+
 .description {
-    color: #2c1886;
+    color: #1C9CF6;
     font-weight: bold;
     font-size: 20px;
-  }
+}
   
   .temp {
     font-size: 18px;
@@ -24,5 +45,16 @@
   
   .highlow {
     font-size: 14px;
-    color: #666;
+    color: #FFCD00;
   }
+  #h{
+    font-size: 12px;
+  }
+
+  #p{
+    font-size: 12px;
+  }
+  
+
+
+

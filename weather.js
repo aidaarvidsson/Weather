@@ -99,7 +99,7 @@ var app = new Vue({
       //hämtar alla localstorage
       var loadCities = localStorage.getItem("citiesWeather");
       var loadCitiesId = localStorage.getItem("citiesId");
-      if(loadCities == "[]"){
+      if(loadCities == "[]" || loadCities == null){
         localStorage.setItem("citiesWeather", JSON.stringify([]));
         localStorage.setItem("citiesId", "0");
         this.cities = [];

@@ -1,72 +1,75 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Weather</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-         <link href="weather.css" rel="stylesheet">
 
-    </head>
-    <body> 
-        <div id="app">
-            <div class="container">
-        
-       
-                <header>
-                    <h1> Väder</h1>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="weather.css" rel="stylesheet">
 
-                </header>
+</head>
 
-                <main>
-                    <div class="container" id="mainContainer">
-                        <div class = "row">
-                            <div class ="col-12 col-md-12 col-lg-6">
-                                <form @submit.prevent="getWeather" id="form">
-                                    <input type="text" placeholder="City" v-model="city" class="form-control">
-                                </form>
-                            </div>
+<body>
+    <div id="app">
+        <div class="container">
 
-                            <div class ="col-12 col-md-12 col-lg-6">
-                                <button id="position" class="btn btn-primary" v-on:click="getGeolocation" >From My Location</button>
-                   
-                                <button id="favorites" class="btn btn-primary" v-on:click="addCityToFav">Add to Favorites</button>
-                                
-                    
 
-                            </div>
+            <header>
+                <h1> Weather </h1>
+
+            </header>
+
+            <main>
+                <div class="container" id="mainContainer">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6">
+                            <form @submit.prevent="getWeather" id="form">
+                                <input type="text" placeholder="City" v-model="city" class="form-control">
+                            </form>
                         </div>
-        
-
-                        <div class = "row">
-                            <div class ="col-12 col-md-6 col-lg-6" id ="mainInfo">
-                                <div v-if="submitted">
-                                    <h2 id ="h2stad"> Weather in {{ weather.name }} </h2>
-                                    <div class="description">{{ weather.description }}</div>
-                                    <div class="temp">It's currently {{ weather.temp }} °C.</div>
-                                    <div class="highlow">High: {{ weather.high }} °C. Low: {{ weather.low }} °C.</div>
-                                    <div class="temp" id ="h">The pressure is {{ weather.pressure }} hPa.</div>
-                                    <div class="temp" id="p">The humidity is {{ weather.humidity }} %.</div>
-                                </div>
-                                <div v-else>
-                                    <weather-table v-bind:wItems="wItems"></weather-table>
-                                </div>
-                            </div>
-                            <div class ="col-12 col-md-6 col-lg-6" id ="favoritInfo">
-                                <city-list v-bind:cities="cities" v-bind:deleteitem="deleteItem" v-bind:searchname="searchName"></city-list>
-                            </div>
+                        <div class="col-12 col-md-12 col-lg-6">
+                            <button id="position" class="btn btn-primary" v-on:click="getGeolocation">From My
+                                Location</button>
+                            <button id="favorites" class="btn btn-primary" v-on:click="addCityToFav">Add to
+                                Favorites</button>
                         </div>
                     </div>
-                </main>
 
-                <footer> Copyright Aida Arvidsson, Gino Herrera, Lina Hassani </footer>
 
-            </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6" id="mainInfo">
+                            <div v-if="submitted">
+                                <h2 id="h2stad"> Weather in {{ weather.name }} </h2>
+                                <div class="description">{{ weather.description }}</div>
+                                <div class="temp">It's currently {{ weather.temp }} °C.</div>
+                                <div class="highlow">High: {{ weather.high }} °C. Low: {{ weather.low }} °C.</div>
+                                <div class="temp" id="h">The pressure is {{ weather.pressure }} hPa.</div>
+                                <div class="temp" id="p">The humidity is {{ weather.humidity }} %.</div>
+                            </div>
+                            <div v-else>
+                                <weather-table v-bind:wItems="wItems"></weather-table>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6" id="favoritInfo">
+                            <city-list v-bind:cities="cities" v-bind:deleteitem="deleteItem"
+                                v-bind:searchname="searchName"></city-list>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+            <footer id="footer"> Copyright © Aida Arvidsson, Gino Herrera, Lina Hassani </footer>
+
         </div>
-       
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="geo-data-table.js"></script>
-        <script src="weather.js"></script>
-    
-    </body>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="geo-data-table.js"></script>
+    <script src="weather.js"></script>
+
+</body>
+
 </html>

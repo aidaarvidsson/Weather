@@ -1,60 +1,84 @@
-body{
+body {
   background-image: url("background4.jpeg");
 }
 
-h1{
+header {
+  padding: 10px;
+}
+
+h1 {
   text-align: center;
   color: #1D71F2
 }
 
-
-#mainInfo{
-
-   color: #666;
-  
+#mainInfo {
+  color: #666;
 }
 
-.mainContainer{
-  margin:10px;
+.mainContainer {
+  margin: 10px;
 }
-#h2stad{
+
+#h2stad {
   color: #1D71F2;
 }
 
 input[type="text"], textarea {
-
-  background-color : #E3F4FE; 
-
+  background-color: #E3F4FE;
 }
 
 #li {
-  background-color : #E3F4FE; 
+  background-color: #E3F4FE;
 }
 
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #E3F4FE;
+  text-align: center;
+}
 
+#position, #favorites {
+  margin-bottom: 10px;
+}
 
 .description {
-    color: #1C9CF6;
-    font-weight: bold;
-    font-size: 20px;
+  color: #1C9CF6;
+  font-weight: bold;
+  font-size: 20px;
 }
-  
-  .temp {
-    font-size: 18px;
-  }
-  
-  .highlow {
-    font-size: 14px;
-    color: #FFCD00;
-  }
-  #h{
-    font-size: 12px;
-  }
 
-  #p{
-    font-size: 12px;
+.temp {
+  font-size: 18px;
+}
+
+.highlow {
+  font-size: 14px;
+  color: #FFCD00;
+}
+
+#h {
+  font-size: 12px;
+}
+
+#p {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 500px) {
+  #position {
+    margin-top: 10px;
   }
-  
+  #favorites {
+    margin-top: 10px;
+  }
+}
 
-
-
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+  #position, #favorites {
+    margin-top: 10px;
+  }
+}
